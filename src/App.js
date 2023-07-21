@@ -8,6 +8,7 @@ import ResourcesLower from './components/resources/ResourcesLower';
 import MailingsUpper from './components/mailings/MailingsUpper';
 import MailingsLower from './components/mailings/MailingsLower';
 import CatalogueRequests from './components/mailings/CatalogueRequests';
+import NewMailing from './components/mailings/NewMailing';
 
 const App = () => {
   const [activeNavItem, setActiveNavItem] = useState('home');
@@ -47,7 +48,7 @@ const App = () => {
         {activeNavItem === 'mailings' && (
           <>
             <MailingsUpper/>
-            {activeSubNavItem === null ? <MailingsLower/> : (activeSubNavItem === 'catalogue requests' ? <CatalogueRequests/> : <div>{/* other component based on activeSubNavItem */}</div>)}
+            {activeSubNavItem === null ? <MailingsLower/> : (activeSubNavItem === 'catalogue requests' ? <CatalogueRequests/> : activeSubNavItem === 'new mailing' ? <NewMailing /> : <div>{/* other component based on activeSubNavItem */}</div>)}
           </>
         )}
       </>
