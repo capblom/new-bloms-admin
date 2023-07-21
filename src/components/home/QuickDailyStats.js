@@ -17,7 +17,7 @@ const QuickDailyStats = () => {
     const consumerKey = 'ck_0bb0c1a16e735059f4a2c00644ad4af42285a69c'
     const consumerSecret = 'cs_e103c56e7fc70262b03bfb34fea7e198a1b44731'
 
-    
+
 
     const fetchData = useCallback(async () => {
         setIsError(false)
@@ -43,7 +43,6 @@ const QuickDailyStats = () => {
             const numOrders7 = orders.length
             const totalOrderValue7 = Number(orders.reduce((sum, order) => sum + order.value, 0).toFixed(2));
 
-
             const today = new Date();
             today.setHours(0, 0, 0, 0)
 
@@ -65,8 +64,10 @@ const QuickDailyStats = () => {
             if (sortedValues.length % 2 === 0) {
                 medOrderValue = Number(((sortedValues[sortedValues.length / 2 - 1] + sortedValues[sortedValues.length / 2]) / 2).toFixed(2));
             } else {
-                medOrderValue = sortedValues[(sortedValues.length - 1) / 2];
+                medOrderValue = Number(Number(sortedValues[Math.floor(sortedValues.length / 2)]).toFixed(2));
             }
+            
+
 
             setStats({
                 numOrders,

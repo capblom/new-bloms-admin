@@ -105,6 +105,28 @@
     color: var(--aqua);
 }
 
+.upper-home-heading {
+    grid-column: 1 / 5;
+    text-align: right;
+}
+
+.upper-home-heading h2 {
+    color: var(--orange);
+    margin: 20px;
+}
+
+.upper-home-heading h4 {
+    margin: 20px;
+    color: var(--light-grey);
+}
+
+.upper-home-main {
+    grid-column: 1 / 5;
+    grid-row: 2 / 4;
+    margin: 20px;
+    text-align: right;
+}
+
 
 
 

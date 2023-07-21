@@ -24,8 +24,9 @@
 
 .upper-container-right {
   width: 50%;
-  background-color: var(--aqua);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .lower-container {
