@@ -17,18 +17,20 @@ const QuickDailyStats = () => {
     const consumerKey = 'ck_0bb0c1a16e735059f4a2c00644ad4af42285a69c'
     const consumerSecret = 'cs_e103c56e7fc70262b03bfb34fea7e198a1b44731'
 
-    const config = {
-        method: 'get',
-        url: `https://blomsbulbs.com/wp-json/wc/v3/last-7-days-orders`,
-        auth: {
-            username: consumerKey,
-            password: consumerSecret
-        },
-    }
+    
 
     const fetchData = useCallback(async () => {
         setIsError(false)
         setIsLoading(true)
+
+        const config = {
+            method: 'get',
+            url: `https://blomsbulbs.com/wp-json/wc/v3/last-7-days-orders`,
+            auth: {
+                username: consumerKey,
+                password: consumerSecret
+            },
+        }
 
         try {
             const response = await axios(config)
@@ -138,7 +140,7 @@ const QuickDailyStats = () => {
                 </div>
             )}
 
-<div className="qds-button-container">
+            <div className="qds-button-container">
                 <div className="qds-button-label">
                     <h2>REFRESH</h2>
                 </div>
